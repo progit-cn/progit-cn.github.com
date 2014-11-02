@@ -414,11 +414,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Pro Git</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_pro_git">Pro Git</a>
 <ul class="sectlevel1">
+<li><a href="#_preface_by_scott_chacon">Preface by Scott Chacon</a></li>
+<li><a href="#_preface_by_ben_straub">Preface by Ben Straub</a></li>
+<li><a href="#_dedications">Dedications</a></li>
 <li><a href="#_getting_started">起步</a>
 <ul class="sectlevel2">
 <li><a href="#_关于版本控制">关于版本控制</a></li>
-<li><a href="#_a_short_history_of_git">A Short History of Git</a></li>
+<li><a href="#_git_简史">Git 简史</a></li>
 <li><a href="#_git_basics">Git Basics</a></li>
 <li><a href="#_the_command_line">The Command Line</a></li>
 <li><a href="#_installing_git">Installing Git</a></li>
@@ -565,9 +570,82 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
+<h1 id="_pro_git" class="sect0">Pro Git</h1>
+<div class="sect1">
+<h2 id="_preface_by_scott_chacon">Preface by Scott Chacon</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the second edition of Pro Git.
+The first edition was published over four years ago now.
+Since then a lot has changed and yet many important things have not.
+While most of the core commands and concepts are still valid today as the Git core team is pretty fantastic at keeping things backward compatible, there have been some significant additions and changes in the community surrounding Git.
+The second edition of this book is meant to address those changes and update the book so it can be more helpful to the new user.</p>
+</div>
+<div class="paragraph">
+<p>When I wrote the first edition, Git was still a relatively difficult to use and barely adopted tool for the harder core hacker.
+It was starting to gain steam in certain communities, but had not reached anywhere near the ubiquity it has today.
+Since then, nearly every open source community has adopted it.
+Git has made incredible progress on Windows, in the explosion of graphical user interfaces to it for all platforms, in IDE support and in business use.
+The Pro Git of four years ago knows about none of that.
+One of the main aims of this new edition is to touch on all of those new frontiers in the Git community.</p>
+</div>
+<div class="paragraph">
+<p>The Open Source community using Git has also exploded.
+When I originally sat down to write the book nearly five years ago (it took me a while to get the first version out), I had just started working at a very little known company developing a Git hosting website called GitHub.
+At the time of publishing there were maybe a few thousand people using the site and just four of us working on it.
+As I write this introduction, GitHub is announcing our 10 millionth hosted project, with nearly 5 million registered developer accounts and over 230 employees.
+Love it or hate it, GitHub has heavily changed large swaths of the Open Source community in a way that was barely conceivable when I sat down to write the first edition.</p>
+</div>
+<div class="paragraph">
+<p>I wrote a small section in the original version of Pro Git about GitHub as an example of hosted Git which I was never very comfortable with.
+I didn&#8217;t much like that I was writing what I felt was essentially a community resource and also talking about my company in it.
+While I still don&#8217;t love that conflict of interests, the importance of GitHub in the Git community is unavoidable.
+Instead of an example of Git hosting, I have decided to turn that part of the book into more deeply describing what GitHub is and how to effectively use it.
+If you are going to learn how to use Git then knowing how to use GitHub will help you take part in a huge community, which is valuable no matter which Git host you decide to use for your own code.</p>
+</div>
+<div class="paragraph">
+<p>The other large change in the time since the last publishing has been the development and rise of the HTTP protocol for Git network transactions. Most of the examples in the book have been changed to HTTP from SSH because it&#8217;s so much simpler.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s been amazing to watch Git grow over the past few years from a relatively obscure version control system to basically dominating commercial and open source version control. I&#8217;m happy that Pro Git has done so well and has also been able to be one of the few technical books on the market that is both quite successful and fully open source.</p>
+</div>
+<div class="paragraph">
+<p>I hope you enjoy this updated edition of Pro Git.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preface_by_ben_straub">Preface by Ben Straub</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first edition of this book is what got me hooked on Git. This was my introduction to a style of making software that felt more natural than anything I had seen before. I had been a developer for several years by then, but this was the right turn that sent me down a much more interesting path than the one I was on.</p>
+</div>
+<div class="paragraph">
+<p>Now, years later, I&#8217;m a contributer to a major Git implementation, I&#8217;ve worked for the largest Git hosting company, and I&#8217;ve traveled the world teaching people about Git. When Scott asked if I&#8217;d be interested in working on the second edition, I didn&#8217;t even have to think.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s been a great pleasure and privilege to work on this book. I hope it helps you as much as it did me.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dedications">Dedications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>To my wife, Becky, without whom this adventure never would have begun. — Ben</em></p>
+</div>
+<div class="paragraph">
+<p><em>This edition is dedicated to my girls.
+To my wife Jessica who has supported me for all of these years and to my daughter Josephine,
+who will support me when I&#8217;m too old to know what&#8217;s going on. — Scott</em></p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_getting_started">起步</h2>
 <div class="sectionbody">
@@ -582,12 +660,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>
 什么是“版本控制”？我为什么要关心它呢？
 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。
-在本书所展示的例子中，我们仅对保存着软件源代码的文本文件作版本控制管理，但实际上，你可以对任何类型的文件进行版本控制。</p>
+在本书所展示的例子中，我们仅对保存着软件源代码的文本文件作版本控制管理，但实际上，您可以对任何类型的文件进行版本控制。</p>
 </div>
 <div class="paragraph">
-<p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能）。采用版本控制系统（VCS）是个明智的选择。
-有了它你就可以将某个文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。
-使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。
+<p>如果您是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是您非常渴望拥有的功能）。采用版本控制系统（VCS）是个明智的选择。
+有了它您就可以将某个文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，您可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。
+使用版本控制系统通常还意味着，就算您乱来一气把整个项目中的文件改的改删的删，您也照样可以轻松恢复到原先的样子。
 但额外增加的工作量却微乎其微。</p>
 </div>
 <div class="sect3">
@@ -603,7 +681,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/local.png" alt="Local version control diagram">
+<img src="images/local.png" alt="本地版本控制图解">
 </div>
 <div class="title">Figure 1. 本地版本控制.</div>
 </div>
@@ -614,91 +692,91 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_centralized_version_control_systems">Centralized Version Control Systems</h4>
+<h4 id="_集中化的版本控制系统">集中化的版本控制系统</h4>
 <div class="paragraph">
 <p>
-The next major issue that people encounter is that they need to collaborate with developers on other systems.
-To deal with this problem, Centralized Version Control Systems (CVCSs) were developed.
-These systems, such as CVS, Subversion, and Perforce, have a single server that contains all the versioned files, and a number of clients that check out files from that central place. 
-For many years, this has been the standard for version control.</p>
+接下来人们又遇到一个问题，如何让在不同系统上的开发者协同工作？
+于是，集中化的版本控制系统（Centralized Version Control Systems，简称 CVCS）应运而生。
+这类系统，诸如 CVS，Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。
+多年以来，这已成为版本控制系统的标准做法。</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/centralized.png" alt="Centralized version control diagram">
+<img src="images/centralized.png" alt="集中化的版本控制图解">
 </div>
-<div class="title">Figure 2. Centralized version control.</div>
-</div>
-<div class="paragraph">
-<p>This setup offers many advantages, especially over local VCSs.
-For example, everyone knows to a certain degree what everyone else on the project is doing.
-Administrators have fine-grained control over who can do what; and it&#8217;s far easier to administer a CVCS than it is to deal with local databases on every client.</p>
+<div class="title">Figure 2. 集中化的版本控制.</div>
 </div>
 <div class="paragraph">
-<p>However, this setup also has some serious downsides.
-The most obvious is the single point of failure that the centralized server represents.
-If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they&#8217;re working on.
-If the hard disk the central database is on becomes corrupted, and proper backups haven&#8217;t been kept, you lose absolutely everything – the entire history of the project except whatever single snapshots people happen to have on their local machines.
-Local VCS systems suffer from this same problem – whenever you have the entire history of the project in a single place, you risk losing everything.</p>
+<p>这种做法带来了许多好处，特别是相较于老式的本地 VCS 来说。
+现在，每个人都可以在一定程度上看到项目中的其他人正在做些什么。
+而管理员也可以轻松掌控每个开发者的权限，并且管理一个 CVCS 要远比在各个客户端上维护本地数据库来得轻松容易。</p>
+</div>
+<div class="paragraph">
+<p>事分两面，有好有坏。
+这么做最显而易见的缺点是中央服务器的单点故障。
+如果宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。
+要是中央服务器的磁盘发生故障，碰巧没做备份，或者备份不够及时，就会有丢失数据的风险。最坏的情况是彻底丢失整个项目的所有历史更改记录，而被客户端偶然提取出来的保存在本地的某些快照数据就成了恢复数据的希望。但这样的话依然是个问题，您不能保证所有的数据都已经有人事先完整提取出来过。
+本地版本控制系统也存在类似问题，只要整个项目的历史记录被保存在单一位置，就有丢失所有历史更新记录的风险。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_distributed_version_control_systems">Distributed Version Control Systems</h4>
+<h4 id="_分布式版本控制系统">分布式版本控制系统</h4>
 <div class="paragraph">
 <p>
-This is where Distributed Version Control Systems (DVCSs) step in.
-In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don&#8217;t just check out the latest snapshot of the files: they fully mirror the repository.
-Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it.
-Every checkout is really a full backup of all the data.</p>
+于是分布式版本控制系统（Distributed Version Control System，简称 DVCS）面世了。
+在这类系统中，像 Git，Mercurial，Bazaar 以及 Darcs 等，客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。
+这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。
+因为每一次的提取操作，实际上都是一次对代码仓库的完整备份。</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/distributed.png" alt="Distributed version control diagram">
+<img src="images/distributed.png" alt="分布式版本控制图解">
 </div>
-<div class="title">Figure 3. Distributed version control.</div>
+<div class="title">Figure 3. 分布式版本控制.</div>
 </div>
 <div class="paragraph">
-<p>Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project.
-This allows you to set up several types of workflows that aren&#8217;t possible in centralized systems, such as hierarchical models.</p>
+<p>更进一步，许多这类系统都可以指定和若干不同的远端代码仓库进行交互。籍此，您就可以在同一个项目中，分别和不同工作小组的人相互协作。
+您可以根据需要设定不同的协作流程，比如层次模型式的工作流，而这在以前的集中式系统中是无法实现的。</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_short_history_of_git">A Short History of Git</h3>
+<h3 id="_git_简史">Git 简史</h3>
 <div class="paragraph">
-<p>As with many great things in life, Git began with a bit of creative destruction and fiery controversy.</p>
+<p>同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。</p>
 </div>
 <div class="paragraph">
-<p>The Linux kernel is an open source software project of fairly large scope.
-For most of the lifetime of the Linux kernel maintenance (1991–2002), changes to the software were passed around as patches and archived files.
-In 2002, the Linux kernel project began using a proprietary DVCS called BitKeeper.</p>
+<p>Linux 内核开源项目有着为数众广的参与者。
+绝大多数的 Linux 内核维护工作都花在了提交补丁和保存归档的繁琐事务上（1991－2002年间）。
+到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 BitKeeper 来管理和维护代码。</p>
 </div>
 <div class="paragraph">
-<p>In 2005, the relationship between the community that developed the Linux kernel and the commercial company that developed BitKeeper broke down, and the tool&#8217;s free-of-charge status was revoked.
-This prompted the Linux development community (and in particular Linus Torvalds, the creator of Linux) to develop their own tool based on some of the lessons they learned while using BitKeeper.
-Some of the goals of the new system were as follows:</p>
+<p>到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了免费使用 BitKeeper 的权力。
+这就迫使 Linux 开源社区（特别是 Linux 的缔造者 Linux Torvalds）基于使用 BitKcheper 时的经验教训，开发出自己的版本系统。
+他们对新的系统制订了若干目标：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Speed</p>
+<p>速度</p>
 </li>
 <li>
-<p>Simple design</p>
+<p>简单的设计</p>
 </li>
 <li>
-<p>Strong support for non-linear development (thousands of parallel branches)</p>
+<p>对非线性开发模式的强力支持（允许成千上万个并行开发的分支）</p>
 </li>
 <li>
-<p>Fully distributed</p>
+<p>完全分布式</p>
 </li>
 <li>
-<p>Able to handle large projects like the Linux kernel efficiently (speed and data size)</p>
+<p>有能力高效管理类似 Linux 内核一样的超大规模项目（速度和数据量）</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities.
-It&#8217;s incredibly fast, it&#8217;s very efficient with large projects, and it has an incredible branching system for non-linear development (See <a href="#_git_branching">Git Branching</a>).</p>
+<p>自诞生于 2005 年以来，Git 日臻成熟完善，在高度易用的同时，仍然保留着初期设定的目标。
+它的速度飞快，极其适合管理大项目，它还有着令人难以置信的非线性分支管理系统（参见 <a href="#_git_branching">Git Branching</a>），可以应付各种复杂的项目开发需求。</p>
 </div>
 </div>
 <div class="sect2">
@@ -860,7 +938,7 @@ In <a href="#_git_basics_chapter">Git Basics</a>, you&#8217;ll learn more about 
 There are the original command line tools, and there are many graphical user interfaces of varying capabilities.
 For this book, we will be using Git on the command line.
 For one, the command line is the only place you can run <strong>all</strong> Git commands – most of the GUIs only implement some subset of Git functionality for simplicity.
-If you know how to run the command line version, you can probably also figure out how to run the GUI version, while the opposite is not neccesarily true.
+If you know how to run the command line version, you can probably also figure out how to run the GUI version, while the opposite is not necessarily true.
 Also, while your choice of graphical client is a matter of personal taste, <em>all</em> users will have the command-line tools installed and available.</p>
 </div>
 <div class="paragraph">
@@ -1339,7 +1417,7 @@ The <code>git add</code> command takes a path name for either a file or a direct
 <h4 id="_staging_modified_files">Staging Modified Files</h4>
 <div class="paragraph">
 <p>Let&#8217;s change a file that was already tracked.
-If you change a previously tracked file called &#8220;benchmarks.rb&#8221; and then run your <code>git status</code> command again, you get something that looks like this:</p>
+If you change a previously tracked file called &#8220;CONTRIBUTING.md&#8221; and then run your <code>git status</code> command again, you get something that looks like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1354,68 +1432,68 @@ Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The &#8220;benchmarks.rb&#8221; file appears under a section named &#8220;Changed but not staged for commit&#8221; – which means that a file that is tracked has been modified in the working directory but not yet staged.
+<p>The &#8220;CONTRIBUTING.md&#8221; file appears under a section named &#8220;Changed but not staged for commit&#8221; – which means that a file that is tracked has been modified in the working directory but not yet staged.
 To stage it, you run the <code>git add</code> command. <code>git add</code> is a multipurpose command – you use it to begin tracking new files, to stage files, and to do other things like marking merge-conflicted files as resolved. It may be helpful to think of it more as &#8220;add this content to the next commit&#8221; rather than &#8220;add this file to the project&#8221;.
-Let&#8217;s run <code>git add</code> now to stage the &#8220;benchmarks.rb&#8221; file, and then run <code>git status</code> again:</p>
+Let&#8217;s run <code>git add</code> now to stage the &#8220;CONTRIBUTING.md&#8221; file, and then run <code>git status</code> again:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git add benchmarks.rb
+<pre class="highlight"><code class="language-console" data-lang="console">$ git add CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
     new file:   README
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Both files are staged and will go into your next commit.
-At this point, suppose you remember one little change that you want to make in <code>benchmarks.rb</code> before you commit it.
+At this point, suppose you remember one little change that you want to make in <code>CONTRIBUTING.md</code> before you commit it.
 You open it again and make that change, and you&#8217;re ready to commit.
 However, let&#8217;s run <code>git status</code> one more time:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ vim benchmarks.rb
+<pre class="highlight"><code class="language-console" data-lang="console">$ vim CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
     new file:   README
-    modified:   benchmarks.rb
+    modified:   CONTRIBUTING.md
 
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>What the heck?
-Now <code>benchmarks.rb</code> is listed as both staged <em>and</em> unstaged.
+Now <code>CONTRIBUTING.md</code> is listed as both staged <em>and</em> unstaged.
 How is that possible?
 It turns out that Git stages a file exactly as it is when you run the <code>git add</code> command.
-If you commit now, the version of <code>benchmarks.rb</code> as it was when you last ran the <code>git add</code> command is how it will go into the commit, not the version of the file as it looks in your working directory when you run <code>git commit</code>.
+If you commit now, the version of <code>CONTRIBUTING.md</code> as it was when you last ran the <code>git add</code> command is how it will go into the commit, not the version of the file as it looks in your working directory when you run <code>git commit</code>.
 If you modify a file after you run <code>git add</code>, you have to run <code>git add</code> again to stage the latest version of the file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git add benchmarks.rb
+<pre class="highlight"><code class="language-console" data-lang="console">$ git add CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
     new file:   README
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 </div>
@@ -1515,7 +1593,7 @@ doc/**/*.txt</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>GitHub maintains a fairly comprehensive list of good <code>.gitignore</code> file examples for dozens or projects and languages at <a href="https://github.com/github/gitignore" class="bare">https://github.com/github/gitignore</a> if you want a starting point for your project.</p>
+<p>GitHub maintains a fairly comprehensive list of good <code>.gitignore</code> file examples for dozens of projects and languages at <a href="https://github.com/github/gitignore" class="bare">https://github.com/github/gitignore</a> if you want a starting point for your project.</p>
 </div>
 </td>
 </tr>
@@ -1531,7 +1609,7 @@ And what have you staged that you are about to commit?
 Although <code>git status</code> answers those questions very generally by listing the file names, <code>git diff</code> shows you the exact lines added and removed – the patch, as it were.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s say you edit and stage the <code>README</code> file again and then edit the <code>benchmarks.rb</code> file without staging it.
+<p>Let&#8217;s say you edit and stage the <code>README</code> file again and then edit the <code>CONTRIBUTING.md</code> file without staging it.
 If you run your <code>git status</code> command, you once again see something like this:</p>
 </div>
 <div class="listingblock">
@@ -1547,7 +1625,7 @@ Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1556,21 +1634,20 @@ Changes not staged for commit:
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">$ git diff
-diff --git a/benchmarks.rb b/benchmarks.rb
-index 3cb747f..e445e28 100644
---- a/benchmarks.rb
-+++ b/benchmarks.rb
-@@ -36,6 +36,10 @@ def main
-           @commit.parents[0].parents[0].parents[0]
-         end
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+index 8ebb991..643e24f 100644
+--- a/CONTRIBUTING.md
++++ b/CONTRIBUTING.md
+@@ -65,7 +65,8 @@ branch directly, things can get messy.
+ Please include a nice description of your changes when you submit your PR;
+ if we have to read the whole diff to figure out why you're contributing
+ in the first place, you're less likely to get feedback and have your change
+-merged in.
++merged in. Also, split your changes into comprehensive chunks if you patch is
++longer than a dozen lines.
 
-+        run_code(x, 'commits 1') do
-+          git.commits.size
-+        end
-+
-         run_code(x, 'commits 2') do
-           log = git.commits('master', 15)
-           log.size</code></pre>
+ If you are starting to work on a particular area, feel free to submit a PR
+ that highlights your work in progress (and note in the PR title that it's</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1589,11 +1666,8 @@ new file mode 100644
 index 0000000..03902a1
 --- /dev/null
 +++ b/README
-@@ -0,0 +1,4 @@
-+My Project
-+
-+ This is my project and it is amazing.
-+</code></pre>
+@@ -0,0 +1 @@
++My Project</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1601,24 +1675,24 @@ index 0000000..03902a1
 This can be confusing, because if you&#8217;ve staged all of your changes, <code>git diff</code> will give you no output.</p>
 </div>
 <div class="paragraph">
-<p>For another example, if you stage the <code>benchmarks.rb</code> file and then edit it, you can use <code>git diff</code> to see the changes in the file that are staged and the changes that are unstaged. If our environment looks like this:</p>
+<p>For another example, if you stage the <code>CONTRIBUTING.md</code> file and then edit it, you can use <code>git diff</code> to see the changes in the file that are staged and the changes that are unstaged. If our environment looks like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git add benchmarks.rb
-$ echo '# test line' &gt;&gt; benchmarks.rb
+<pre class="highlight"><code class="language-console" data-lang="console">$ git add CONTRIBUTING.md
+$ echo 'test line' &gt;&gt; CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-    modified:   benchmarks.rb
+    modified:   CONTRIBUTING.md
 
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1627,38 +1701,37 @@ Changes not staged for commit:
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">$ git diff
-diff --git a/benchmarks.rb b/benchmarks.rb
-index e445e28..86b2f7c 100644
---- a/benchmarks.rb
-+++ b/benchmarks.rb
-@@ -127,3 +127,4 @@ end
- main()
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+index 643e24f..87f08c8 100644
+--- a/CONTRIBUTING.md
++++ b/CONTRIBUTING.md
+@@ -119,3 +119,4 @@ at the
+ ## Starter Projects
 
- ##pp Grit::GitRuby.cache_client.stats
+ See our [projects list](https://github.com/libgit2/libgit2/blob/development/PROJECTS.md).
 +# test line</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>and <code>git diff --cached</code> to see what you&#8217;ve staged so far:</p>
+<p>and <code>git diff --cached</code> to see what you&#8217;ve staged so far (--staged and --cached are synonyms):</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">$ git diff --cached
-diff --git a/benchmarks.rb b/benchmarks.rb
-index 3cb747f..e445e28 100644
---- a/benchmarks.rb
-+++ b/benchmarks.rb
-@@ -36,6 +36,10 @@ def main
-          @commit.parents[0].parents[0].parents[0]
-        end
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+index 8ebb991..643e24f 100644
+--- a/CONTRIBUTING.md
++++ b/CONTRIBUTING.md
+@@ -65,7 +65,8 @@ branch directly, things can get messy.
+ Please include a nice description of your changes when you submit your PR;
+ if we have to read the whole diff to figure out why you're contributing
+ in the first place, you're less likely to get feedback and have your change
+-merged in.
++merged in. Also, split your changes into comprehensive chunks if you patch is
++longer than a dozen lines.
 
-+        run_code(x, 'commits 1') do
-+          git.commits.size
-+        end
-+
-        run_code(x, 'commits 2') do
-          log = git.commits('master', 15)
-          log.size</code></pre>
+ If you are starting to work on a particular area, feel free to submit a PR
+ that highlights your work in progress (and note in the PR title that it's</code></pre>
 </div>
 </div>
 <div id="_git_difftool" class="admonitionblock note">
@@ -1705,7 +1778,7 @@ The simplest way to commit is to type <code>git commit</code>:</p>
 # On branch master
 # Changes to be committed:
 #	new file:   README
-#	modified:   benchmarks.rb
+#	modified:   CONTRIBUTING.md
 #
 ~
 ~
@@ -1757,7 +1830,7 @@ Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb
+    modified:   CONTRIBUTING.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 $ git commit -a -m 'added new benchmarks'
@@ -1766,7 +1839,7 @@ $ git commit -a -m 'added new benchmarks'
 </div>
 </div>
 <div class="paragraph">
-<p>Notice how you don&#8217;t have to run <code>git add</code> on the &#8220;benchmarks.rb&#8221; file in this case before you commit.</p>
+<p>Notice how you don&#8217;t have to run <code>git add</code> on the &#8220;CONTRIBUTING.md&#8221; file in this case before you commit.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1781,14 +1854,15 @@ The <code>git rm</code> command does that, and also removes the file from your w
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ rm grit.gemspec
+<pre class="highlight"><code class="language-console" data-lang="console">$ rm PROJECTS.md
 $ git status
 On branch master
+Your branch is up-to-date with 'origin/master'.
 Changes not staged for commit:
   (use "git add/rm &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    deleted:    grit.gemspec
+        deleted:    PROJECTS.md
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
@@ -1798,14 +1872,14 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git rm grit.gemspec
-rm 'grit.gemspec'
+<pre class="highlight"><code class="language-console" data-lang="console">$ git rm PROJECTS.md
+rm 'PROJECTS.md'
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
-    deleted:    grit.gemspec</code></pre>
+    deleted:    PROJECTS.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1956,7 +2030,7 @@ commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
 Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the verison number
+    changed the version number
 
 diff --git a/Rakefile b/Rakefile
 index a874b73..8f94139 100644
@@ -2007,7 +2081,7 @@ commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
 Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the verison number
+    changed the version number
 
  Rakefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -2047,7 +2121,7 @@ In addition, the <code>short</code>, <code>full</code>, and <code>fuller</code> 
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-console" data-lang="console">$ git log --pretty=oneline
-ca82a6dff817ec66f44342007202690a93763949 changed the verison number
+ca82a6dff817ec66f44342007202690a93763949 changed the version number
 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7 removed unnecessary test
 a11bef06a3f659402fe7563abf99ad00de2209e6 first commit</code></pre>
 </div>
@@ -2255,7 +2329,7 @@ The <code>--author</code> option allows you to filter on a specific author, and 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git log --Sfunction_name</code></pre>
+<pre class="highlight"><code class="language-console" data-lang="console">$ git log -Sfunction_name</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2385,18 +2459,18 @@ Changes to be committed:
   (use "git reset HEAD &lt;file&gt;..." to unstage)
 
     renamed:    README.md -&gt; README
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Right below the &#8220;Changes to be committed&#8221; text, it says use <code>git reset HEAD &lt;file&gt;...</code> to unstage.
-So, let&#8217;s use that advice to unstage the <code>benchmarks.rb</code> file:</p>
+So, let&#8217;s use that advice to unstage the <code>CONTRIBUTING.md</code> file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git reset HEAD benchmarks.rb
+<pre class="highlight"><code class="language-console" data-lang="console">$ git reset HEAD CONTRIBUTING.md
 Unstaged changes after reset:
-M	benchmarks.rb
+M	CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
@@ -2408,12 +2482,12 @@ Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>The command is a bit strange, but it works.
-The <code>benchmarks.rb</code> file is modified but once again unstaged.</p>
+The <code>CONTRIBUTING.md</code> file is modified but once again unstaged.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2436,7 +2510,7 @@ The <code>benchmarks.rb</code> file is modified but once again unstaged.</p>
 <div class="sect3">
 <h4 id="_unmodifying_a_modified_file">Unmodifying a Modified File</h4>
 <div class="paragraph">
-<p>What if you realize that you don&#8217;t want to keep your changes to the <code>benchmarks.rb</code> file?
+<p>What if you realize that you don&#8217;t want to keep your changes to the <code>CONTRIBUTING.md</code> file?
 How can you easily unmodify it – revert it back to what it looked like when you last committed (or initially cloned, or however you got it into your working directory)?
 Luckily, <code>git status</code> tells you how to do that, too.
 In the last example output, the unstaged area looks like this:</p>
@@ -2447,7 +2521,7 @@ In the last example output, the unstaged area looks like this:</p>
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
 
-    modified:   benchmarks.rb</code></pre>
+    modified:   CONTRIBUTING.md</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2456,7 +2530,7 @@ Let&#8217;s do what it says:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout -- benchmarks.rb
+<pre class="highlight"><code class="language-console" data-lang="console">$ git checkout -- CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
@@ -2830,7 +2904,7 @@ commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
 Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the verison number</code></pre>
+    changed the version number</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2867,7 +2941,7 @@ commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
 Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the verison number</code></pre>
+    changed the version number</code></pre>
 </div>
 </div>
 </div>
@@ -4031,7 +4105,7 @@ If you didn&#8217;t want it to be called <code>serverfix</code> on the remote, y
 <p>If you&#8217;re using an HTTPS URL to push over, the Git server will ask you for your username and password for authentication. By default it will prompt you on the terminal for this information so the server can tell if you&#8217;re allowed to push.</p>
 </div>
 <div class="paragraph">
-<p>If you don&#8217;t want to type it every sinlge time you push, you can set up a &#8220;credential cache&#8221;. The simplest is just to keep it in memory for a few mintues, which you can easily set up by running <code>git config --global credential.helper cache</code>.</p>
+<p>If you don&#8217;t want to type it every single time you push, you can set up a &#8220;credential cache&#8221;. The simplest is just to keep it in memory for a few mintues, which you can easily set up by running <code>git config --global credential.helper cache</code>.</p>
 </div>
 <div class="paragraph">
 <p>For more information on the various credential caching options available, see <a href="#_credential_caching">Credential Storage</a>.</p>
@@ -4232,9 +4306,9 @@ Applying: added staged command</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic-rebase-3.png" alt="Rebasing the change introduced in `C3` onto `C4`.">
+<img src="images/basic-rebase-3.png" alt="Rebasing the change introduced in `C4` onto `C3`.">
 </div>
-<div class="title">Figure 37. Rebasing the change introduced in <code>C3</code> onto <code>C4</code></div>
+<div class="title">Figure 37. Rebasing the change introduced in <code>C4</code> onto <code>C3</code></div>
 </div>
 <div class="paragraph">
 <p>At this point, you can go back to the master branch and do a fast-forward merge.</p>
@@ -4252,7 +4326,7 @@ $ git merge experiment</code></pre>
 <div class="title">Figure 38. Fast-forwarding the master branch</div>
 </div>
 <div class="paragraph">
-<p>Now, the snapshot pointed to by <code>C3'</code> is exactly the same as the one that was pointed to by <code>C5</code> in the merge example.
+<p>Now, the snapshot pointed to by <code>C4'</code> is exactly the same as the one that was pointed to by <code>C5</code> in the merge example.
 There is no difference in the end product of the integration, but rebasing makes for a cleaner history.
 If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.</p>
 </div>
@@ -5364,7 +5438,7 @@ At this point, you should be able to visit <code>http://gitserver/</code> to vie
 GitWeb is pretty simplistic though.
 If you&#8217;re looking for a more modern, fully featured Git server, there are some several open source solutions out there that you can install instead.
 As GitLab is one of the more popular ones, we&#8217;ll cover installing and using it as an example.
-This is a bit more complex than the GitWeb option and likely requires more maintainance, but it is a much more fully featured option.</p>
+This is a bit more complex than the GitWeb option and likely requires more maintenance, but it is a much more fully featured option.</p>
 </div>
 <div class="sect3">
 <h4 id="_installation">Installation</h4>
@@ -7655,13 +7729,13 @@ If we click that green button, we&#8217;ll see a screen that allows us to create
 <div class="title">Figure 94. Comments sent as email notifications</div>
 </div>
 <div class="paragraph">
-<p>Anyone can also leave general comments on the Pull Request. In <a href="#_pr_discussion">Pull Request discusson page</a> we can see an example of the project owner both commenting on a line of code and then leaving a general comment in the discussion section. You can see that the code comments are brought into the conversation as well.</p>
+<p>Anyone can also leave general comments on the Pull Request. In <a href="#_pr_discussion">Pull Request discussion page</a> we can see an example of the project owner both commenting on a line of code and then leaving a general comment in the discussion section. You can see that the code comments are brought into the conversation as well.</p>
 </div>
 <div id="_pr_discussion" class="imageblock">
 <div class="content">
 <img src="images/blink-05-general-comment.png" alt="PR discussion page">
 </div>
-<div class="title">Figure 95. Pull Request discusson page</div>
+<div class="title">Figure 95. Pull Request discussion page</div>
 </div>
 <div class="paragraph">
 <p>Now the contributor can see what they need to do in order to get their change accepted. Luckily this is also a very simple thing to do. Where over email you may have to re-roll your series and resubmit it to the mailing list, with GitHub you simply commit to the topic branch again and push.</p>
@@ -7696,7 +7770,7 @@ If we click that green button, we&#8217;ll see a screen that allows us to create
 <td class="content">
 <div class="title">Not Only Forks</div>
 <div class="paragraph">
-<p>It&#8217;s important to note that you can also open a Pull Request between two branches in the same repository. If you&#8217;re working on a feature with someone and you both have write access to the project, you can push a topic branch to the repository and open a Pull Request on it to the <code>master</code> branch of that same project to initiate the code review and discussion process. No forking neccesary.</p>
+<p>It&#8217;s important to note that you can also open a Pull Request between two branches in the same repository. If you&#8217;re working on a feature with someone and you both have write access to the project, you can push a topic branch to the repository and open a Pull Request on it to the <code>master</code> branch of that same project to initiate the code review and discussion process. No forking necessary.</p>
 </div>
 </td>
 </tr>
@@ -7792,7 +7866,7 @@ To https://github.com/tonychacon/blink
 <p>Merge the main branch into your topic branch</p>
 </li>
 <li>
-<p>Fix the conflict that occured</p>
+<p>Fix the conflict that occurred</p>
 </li>
 <li>
 <p>Push back up to the same topic branch</p>
@@ -8016,7 +8090,7 @@ How big are these slings and in particular, these arrows?</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>There are actually quite a number of web services that make use of emoji charaters these days. A great cheat sheet to reference to find emoji that expresses what you want to say can be found at:</p>
+<p>There are actually quite a number of web services that make use of emoji characters these days. A great cheat sheet to reference to find emoji that expresses what you want to say can be found at:</p>
 </div>
 <div class="paragraph">
 <p><a href="http://www.emoji-cheat-sheet.com" class="bare">http://www.emoji-cheat-sheet.com</a></p>
@@ -8368,12 +8442,12 @@ If you go to the &#8220;Notification center&#8221; tab from the settings page, y
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/maint-07-notifications.png" alt="Notifiation center">
+<img src="images/maint-07-notifications.png" alt="Notification center">
 </div>
 <div class="title">Figure 121. Notification center options.</div>
 </div>
 <div class="paragraph">
-<p>The two choices are to get notifications over &#8220;Email&#8221; and over &#8220;Web&#8221; and you can choose either, niether or both for when you actively participate in things and for activity on repositories you are watching.</p>
+<p>The two choices are to get notifications over &#8220;Email&#8221; and over &#8220;Web&#8221; and you can choose either, neither or both for when you actively participate in things and for activity on repositories you are watching.</p>
 </div>
 <div class="sect5">
 <h6 id="_web_notifications">Web Notifications</h6>
@@ -8382,12 +8456,12 @@ If you go to the &#8220;Notification center&#8221; tab from the settings page, y
 </div>
 <div id="_not_center" class="imageblock">
 <div class="content">
-<img src="images/maint-08-notifications-page.png" alt="Notifiation center">
+<img src="images/maint-08-notifications-page.png" alt="Notification center">
 </div>
 <div class="title">Figure 122. Notification center.</div>
 </div>
 <div class="paragraph">
-<p>If you click on that, you will see a list of all the items you have been notified about, grouped by project. You can filter to the notifications of a specific project by clicking on it&#8217;s name in the left hand sidebar. You can also acknowledge the notifiction by clicking the checkmark icon next to any notification, or acknowledge <em>all</em> of the notifictions in a project by clicking the checkmark at the top of the group. There is also a mute button next to each checkmark that you can click to not receive any further notifications on that item.</p>
+<p>If you click on that, you will see a list of all the items you have been notified about, grouped by project. You can filter to the notifications of a specific project by clicking on it&#8217;s name in the left hand sidebar. You can also acknowledge the notification by clicking the checkmark icon next to any notification, or acknowledge <em>all</em> of the notifictions in a project by clicking the checkmark at the top of the group. There is also a mute button next to each checkmark that you can click to not receive any further notifications on that item.</p>
 </div>
 <div class="paragraph">
 <p>All of these tools are very useful for handling large numbers of notifications. Many GitHub power users will simply turn off email notifications entirely and manage all of their notifications through this screen.</p>
@@ -9831,7 +9905,7 @@ Dropped refs/stash@{0} (f0dfc4d5dc332d1cee34a634182e168c4efc3359)</code></pre>
 <p>Some common reasons for this might be to remove cruft that has been generated by merges or external tools or to remove build artifacts in order to run a clean build.</p>
 </div>
 <div class="paragraph">
-<p>You&#8217;ll want to be pretty careful with this command, since it&#8217;s designed to remove files from your working directory that are not tracked. If you change your mind, there is often no retreiving the content of those files. A safer option is to run <code>git stash --all</code> to remove everything but save it in a stash.</p>
+<p>You&#8217;ll want to be pretty careful with this command, since it&#8217;s designed to remove files from your working directory that are not tracked. If you change your mind, there is often no retrieving the content of those files. A safer option is to run <code>git stash --all</code> to remove everything but save it in a stash.</p>
 </div>
 <div class="paragraph">
 <p>Assuming you do want to remove cruft files or clean your working directory, you can do so with <code>git clean</code>. To remove all the untracked files in your working directory, you can run <code>git clean -f -d</code>, which removes any files and also any subdirectories that become empty as a result. The <code>-f</code> means <em>force</em> or "really do this".</p>
@@ -9970,7 +10044,7 @@ commit ca82a6dff817ec66f44342007202690a93763949
 Author: Scott Chacon &lt;schacon@gee-mail.com&gt;
 Date:   Mon Mar 17 21:52:11 2008 -0700
 
-    changed the verison number</code></pre>
+    changed the version number</code></pre>
 </div>
 </div>
 </div>
@@ -10052,7 +10126,7 @@ Date:   Wed Jun 4 19:49:17 2014 -0700
 <pre class="highlight"><code class="language-console" data-lang="console">$ git log --pretty="format:%h %G? %aN  %s"
 
 5c3386c G Scott Chacon  signed commit
-ca82a6d N Scott Chacon  changed the verison number
+ca82a6d N Scott Chacon  changed the version number
 085bb3b N Scott Chacon  removed unnecessary test code
 a11bef0 N Scott Chacon  first commit</code></pre>
 </div>
@@ -10086,7 +10160,7 @@ Fast-forward
 </div>
 </div>
 <div class="paragraph">
-<p>You can also use the <code>-S</code> option with the <code>git merge</code> command itself to sign the resulting merge commit itself. The following example both verifies that every commit in the branch to be merged is signed and futhermore signs the resulting merge commit.</p>
+<p>You can also use the <code>-S</code> option with the <code>git merge</code> command itself to sign the resulting merge commit itself. The following example both verifies that every commit in the branch to be merged is signed and furthermore signs the resulting merge commit.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -11189,7 +11263,7 @@ Pay especial attention to the <em>WD Safe?</em> column – if it says <strong>NO
 <div class="sect2">
 <h3 id="_advanced_merging">Advanced Merging</h3>
 <div class="paragraph">
-<p>Merging in Git is typically fairly easy. Since Git makes it easy to merge another branch multiple times, it means that you can have a very long lived branch but you can keep it up to date as you go, solving small conflicts often, rather than be suprised by one enormous conflict at the end of the series.</p>
+<p>Merging in Git is typically fairly easy. Since Git makes it easy to merge another branch multiple times, it means that you can have a very long lived branch but you can keep it up to date as you go, solving small conflicts often, rather than be surprised by one enormous conflict at the end of the series.</p>
 </div>
 <div class="paragraph">
 <p>However, sometimes tricky conflicts do occur. Unlike some other version control systems, Git does not try to be overly clever about merge conflict resolution. Git&#8217;s philosophy is to be smart about determining when a merge resolution is unambiguous, but if there is a conflict, it does not try to be clever about automatically resolving it. Therefore, if you wait too long to merge two branches that diverge quickly, you can run into some issues.</p>
@@ -11924,7 +11998,7 @@ $</code></pre>
 When you specify a subtree merge, Git is often smart enough to figure out that one is a subtree of the other and merge appropriately.</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll go through an example of adding a seperate project into an existing project and then merging the code of the second into a subdirectory of the first.</p>
+<p>We&#8217;ll go through an example of adding a separate project into an existing project and then merging the code of the second into a subdirectory of the first.</p>
 </div>
 <div class="paragraph">
 <p>First, we&#8217;ll add the Rack application to our project.
@@ -12984,7 +13058,7 @@ Submodule DbConnector c87d55d..82d2ad3:
   &gt; Merge from origin/stable
   &gt; updated setup script
   &gt; unicode support
-  &gt; remove unnessesary method
+  &gt; remove unnecessary method
   &gt; add new option for conn pooling</code></pre>
 </div>
 </div>
@@ -13420,7 +13494,7 @@ Switched to branch 'master'</code></pre>
 <p>Then, when you switch back, you get an empty <code>CryptoLibrary</code> directory for some reason and <code>git submodule update</code> may not fix it either. You may need to go into your submodule directory and run a <code>git checkout .</code> to get all your files back. You could run this in a <code>submodule foreach</code> script to run it for multiple submodules.</p>
 </div>
 <div class="paragraph">
-<p>It&#8217;s important to note that submodules these days keep all their Git data in the top project&#8217;s <code>.git</code> directory, so unlike much older versions of Git, destorying a submodule directory won&#8217;t lose any commits or branches that you had.</p>
+<p>It&#8217;s important to note that submodules these days keep all their Git data in the top project&#8217;s <code>.git</code> directory, so unlike much older versions of Git, destroying a submodule directory won&#8217;t lose any commits or branches that you had.</p>
 </div>
 <div class="paragraph">
 <p>With these tools, submodules can be a fairly simple and effective method for developing on several related but still separate projects simultaneously.</p>
@@ -13536,7 +13610,7 @@ Total 9 (delta 0), reused 0 (delta 0)</code></pre>
 <p>Now we have a <code>commits.bundle</code> file in our directory. If we take that and send it to our partner, she can then import it into the original repository, even if more work has been done there in the meantime.</p>
 </div>
 <div class="paragraph">
-<p>When she gets the bundle, she can inspect it to see what it contains before she imports it into her repository.  The first command is the <code>bundle verify</code> command that will make sure the file is actually a valid Git bundle and that you have all the neccesary ancestors to reconstitute it properly.</p>
+<p>When she gets the bundle, she can inspect it to see what it contains before she imports it into her repository.  The first command is the <code>bundle verify</code> command that will make sure the file is actually a valid Git bundle and that you have all the necessary ancestors to reconstitute it properly.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -13827,7 +13901,7 @@ c6e1e95051d41771a649f3145423f8809d1a74d4 commit	refs/replace/81a708dd0e167a3f691
 </div>
 </div>
 <div class="paragraph">
-<p>This means that it&#8217;s easy to share our replacement with others, because we can push this to our server and other people can easily download it.  This is not that helpful in the history grafting scenario we&#8217;ve gone over here (since everyone would be downloading both histories anyhow, so why seperate them?) but it can be useful in other circumstances.</p>
+<p>This means that it&#8217;s easy to share our replacement with others, because we can push this to our server and other people can easily download it.  This is not that helpful in the history grafting scenario we&#8217;ve gone over here (since everyone would be downloading both histories anyhow, so why separate them?) but it can be useful in other circumstances.</p>
 </div>
 </div>
 <div class="sect2">
@@ -17651,10 +17725,11 @@ Git support is a somewhat new feature for TFS (shipping with the 2013 version), 
 In fact, there are two: git-tf and git-tfs.</p>
 </div>
 <div class="paragraph">
-<p>Git-tfs (found at <a href="http://git-tfs.com" class="bare">http://git-tfs.com</a>) is a .NET project, and (as of this writing) it only runs on Windows.
+<p>Git-tfs (found at <a href="https://github.com/git-tfs/git-tfs" class="bare">https://github.com/git-tfs/git-tfs</a>) is a .NET project, and (as of this writing) it only runs on Windows.
 To work with Git repositories, it uses the .NET bindings for libgit2, a library-oriented implementation of Git which is highly performant and allows a lot of flexibility with the guts of a Git repository.
 Libgit2 is not a complete implementation of Git, so to cover the difference git-tfs will actually call the command-line Git client for some operations, so there are no artificial limits on what it can do with Git repositories.
-Its support of TFVC features is very mature, since it uses the Visual Studio assemblies for operations with servers (however, this means you need a version of Visual Studio installed that includes access to TFVC; as of this writing, none of the free-of-charge versions of Visual Studio can connect with a TFS server).</p>
+Its support of TFVC features is very mature, since it uses the Visual Studio assemblies for operations with servers.
+This does mean you&#8217;ll need access to those assemblies, which means you need to install a recent version of Visual Studio (any edition since version 2010, including Express since version 2012), or the Visual Studio SDK.</p>
 </div>
 <div class="paragraph">
 <p>Git-tf (whose home is at <a href="https://gittf.codeplex.com" class="bare">https://gittf.codeplex.com</a>) is a Java project, and as such runs on any computer with a Java runtime environment.
@@ -17792,7 +17867,7 @@ Git-tfs maps the branch you cloned from to <code>tfs/default</code>, and others 
 <div class="paragraph">
 <p>Another thing to notice is the <code>git-tfs-id:</code> lines in the commit messages.
 Instead of tags, git-tfs uses these markers to relate TFVC changesets to Git commits.
-This has the implication that your Git commits may have a different SHA-1 hash before and after they has been pushed to TFVC.</p>
+This has the implication that your Git commits will have a different SHA-1 hash before and after they has been pushed to TFVC.</p>
 </div>
 </div>
 <div class="sect4">
@@ -18529,7 +18604,7 @@ Date:   Tue Jul 7 01:35:51 2009 -0800
 <h4 id="_git_tfs">TFS</h4>
 <div class="paragraph">
 <p>
-If your team is convering their source control from TFVC to Git, you&#8217;ll want the highest-fidelity conversion you can get.
+If your team is converting their source control from TFVC to Git, you&#8217;ll want the highest-fidelity conversion you can get.
 This means that, while we covered both git-tfs and git-tf for the interop section, we&#8217;ll only be covering git-tfs for this part, because git-tfs supports branches, and this is prohibitively difficult using git-tf.</p>
 </div>
 <div class="admonitionblock note">
@@ -18554,12 +18629,20 @@ You can get this information from the <code>tf</code> command-line client, like 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS&gt; tf history $/myproject -recursive | cut -b 11-20 | tail -n+3 | uniq | sort &gt; AUTHORS</code></pre>
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS&gt; tf history $/myproject -recursive &gt; AUTHORS_TMP</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This grabs all of the changesets in the history of the project.
-The <code>cut</code> command ignores everything except characters 11-20 from each line (you&#8217;ll have to experiment with the length of the fields to get these numbers right).
+<p>This grabs all of the changesets in the history of the project and put it in the AUTHORS_TMP file that we will process to extract the data of the <em>User</em> column (the 2nd one).
+Open the file and find at which characters start and end the column and replace, in the following command-line, the parameters <code>11-20</code> of the <code>cut</code> command with the ones found:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS&gt; cat AUTHORS_TMP | cut -b 11-20 | tail -n+3 | uniq | sort &gt; AUTHORS</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>cut</code> command keeps only the characters between 11 and 20 from each line.
 The <code>tail</code> command skips the first two lines, which are field headers and ASCII-art underlines.
 The result of all of this is piped to <code>uniq</code> to eliminate duplicates, and saved to a file named <code>AUTHORS</code>.
 The next step is manual; in order for git-tfs to make effective use of this file, each line must be in this format:</p>
@@ -19212,7 +19295,7 @@ blob</code></pre>
 Git stores content in a manner similar to a UNIX filesystem, but a bit simplified.
 All the content is stored as tree and blob objects, with trees corresponding to UNIX directory entries and blobs corresponding more or less to inodes or file contents.
 A single tree object contains one or more tree entries, each of which contains a SHA-1 pointer to a blob or subtree with its associated mode, type, and filename.
-For example, the most recent tree in the a project may look something like this:</p>
+For example, the most recent tree in a project may look something like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -21436,7 +21519,7 @@ For complete documentation of this feature (which doesn&#8217;t fit here), go to
 <div class="paragraph">
 <p>
 Eclipse ships with a plugin called Egit, which provides a fairly-complete interface to Git operations.
-It&#8217;s accessed by switching to the Git Perspective (Window &gt; Open Perpective &gt; Other…, and select "Git").</p>
+It&#8217;s accessed by switching to the Git Perspective (Window &gt; Open Perspective &gt; Other…, and select "Git").</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -21564,7 +21647,7 @@ oh-my-zsh&#8217;s plugin system comes with powerful git tab-completion, and it h
 <p>
 
 The standard command-line terminal on Windows (<code>cmd.exe</code>) isn&#8217;t really capable of a customized Git experience, but if you&#8217;re using Powershell, you&#8217;re in luck.
-A package called Posh-Git (<a href="https://github.com/dahlbyk/posh-git" class="bare">https://github.com/dahlbyk/posh-git</a>) provides powerful tab-completion facilities, as well as an enhanced prompt to help you stay on top of your repostitory status. It looks like this:</p>
+A package called Posh-Git (<a href="https://github.com/dahlbyk/posh-git" class="bare">https://github.com/dahlbyk/posh-git</a>) provides powerful tab-completion facilities, as well as an enhanced prompt to help you stay on top of your repository status. It looks like this:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -21667,7 +21750,6 @@ const git_oid *tree_id = git_commit_tree_id(commit);
 
 // Cleanup
 git_commit_free(commit);
-git_object_free(head_commit);
 git_repository_free(repo);</code></pre>
 </div>
 </div>
@@ -21803,13 +21885,14 @@ Here&#8217;s how a custom backend for the object database is set up:</p>
 <pre class="highlight"><code class="language-c" data-lang="c">git_odb *odb;
 int error = git_odb_new(&amp;odb); <b class="conum">(1)</b>
 
-git_repository *repo;
-error = git_repository_wrap_odb(&amp;repo, odb); <b class="conum">(2)</b>
-
 git_odb_backend *my_backend;
-error = git_odb_backend_mine(&amp;my_backend, /*…*/); <b class="conum">(3)</b>
+error = git_odb_backend_mine(&amp;my_backend, /*…*/); <b class="conum">(2)</b>
 
-error = git_odb_add_backendodb, my_backend, 1); <b class="conum">(4)</b></code></pre>
+error = git_odb_add_backend(odb, my_backend, 1); <b class="conum">(3)</b>
+
+git_repository *repo;
+error = git_repository_open(&amp;repo, "some-path");
+error = git_repository_set_odb(odb); <b class="conum">(4)</b></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -21818,22 +21901,22 @@ error = git_odb_add_backendodb, my_backend, 1); <b class="conum">(4)</b></code><
 <div class="colist arabic">
 <ol>
 <li>
-<p>Initialize an empty object database (ODB) &#8220;frontend,&#8221; which will act as a handle to the real ODB.</p>
-</li>
-<li>
-<p>Construct a <code>git_repository</code> around the empty ODB.</p>
+<p>Initialize an empty object database (ODB) &#8220;frontend,&#8221; which will act as a container for the &#8220;backends&#8221; which are the ones doing the real work.</p>
 </li>
 <li>
 <p>Initialize a custom ODB backend.</p>
 </li>
 <li>
-<p>Set the repository to use the custom backend for its ODB.</p>
+<p>Add the backend to the frontend.</p>
+</li>
+<li>
+<p>Open a repository, and set it to use our ODB to look up objects.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>But what is this <code>git_odb_backend_mine</code> thing?
-Well, that&#8217;s your own ODB implementation, and you can do whatever you want in there, so long as you fill in the <code>git_odb_backend</code> structure properly.
+Well, that&#8217;s the constructor for your own ODB implementation, and you can do whatever you want in there, so long as you fill in the <code>git_odb_backend</code> structure properly.
 Here&#8217;s what it <em>could</em> look like:</p>
 </div>
 <div class="listingblock">
@@ -22306,7 +22389,7 @@ These are standard Javadoc, so your favorite JVM IDE will be able to install the
 <div class="sect3">
 <h4 id="_git_commit">git commit</h4>
 <div class="paragraph">
-<p>The <code>git commit</code> command takes all the file contents that have been staged with <code>git add</code> and records a new permanant snapshot in the database and then moves the branch pointer on the current branch up to it.</p>
+<p>The <code>git commit</code> command takes all the file contents that have been staged with <code>git add</code> and records a new permanent snapshot in the database and then moves the branch pointer on the current branch up to it.</p>
 </div>
 <div class="paragraph">
 <p>We first cover the basics of committing in <a href="#_committing_changes">Committing Your Changes</a>. There we also demonstrate how to use the <code>-a</code> flag to skip the <code>git add</code> step in daily workflows and how to use the <code>-m</code> flag to pass a commit message in on the command line instead of firing up an editor.</p>
@@ -22354,7 +22437,7 @@ These are standard Javadoc, so your favorite JVM IDE will be able to install the
 <div class="sect3">
 <h4 id="_git_mv_2">git mv</h4>
 <div class="paragraph">
-<p>The <code>git mv</code> command is a thin convience command to move a file and then run <code>git add</code> on the new file and <code>git rm</code> on the old file.</p>
+<p>The <code>git mv</code> command is a thin convenience command to move a file and then run <code>git add</code> on the new file and <code>git rm</code> on the old file.</p>
 </div>
 <div class="paragraph">
 <p>We only briefly mention this command in <a href="#_git_mv">Moving Files</a>.</p>
@@ -22474,7 +22557,7 @@ These are standard Javadoc, so your favorite JVM IDE will be able to install the
 <div class="sect3">
 <h4 id="_git_stash">git stash</h4>
 <div class="paragraph">
-<p>The <code>git stash</code> command is used to temporarily store uncomitted work in order to clean out your working directory without having to commit unfinished work on a branch.</p>
+<p>The <code>git stash</code> command is used to temporarily store uncommitted work in order to clean out your working directory without having to commit unfinished work on a branch.</p>
 </div>
 <div class="paragraph">
 <p>This is basically entirely covered in <a href="#_git_stashing">Stashing and Cleaning</a>.</p>
@@ -22483,7 +22566,7 @@ These are standard Javadoc, so your favorite JVM IDE will be able to install the
 <div class="sect3">
 <h4 id="_git_tag">git tag</h4>
 <div class="paragraph">
-<p>The <code>git tag</code> command is used to give a permanant bookmark to a specific point in the code history. Generally this is used for things like releases.</p>
+<p>The <code>git tag</code> command is used to give a permanent bookmark to a specific point in the code history. Generally this is used for things like releases.</p>
 </div>
 <div class="paragraph">
 <p>This command is introduced and covered in detail in <a href="#_git_tagging">Tagging</a> and we use it in practice in <a href="#_tagging_releases">Tagging Your Releases</a>.</p>
@@ -22684,7 +22767,7 @@ These are standard Javadoc, so your favorite JVM IDE will be able to install the
 <p>Rebasing is covered in detail in <a href="#_rebasing">Rebasing</a>, including covering the collaborative issues involved with rebasing branches that are already public.</p>
 </div>
 <div class="paragraph">
-<p>We use it in practice during an example of splitting your history into two seperate repositories in <a href="#_replace">Replace</a>, using the <code>--onto</code> flag as well.</p>
+<p>We use it in practice during an example of splitting your history into two separate repositories in <a href="#_replace">Replace</a>, using the <code>--onto</code> flag as well.</p>
 </div>
 <div class="paragraph">
 <p>We go through running into a merge conflict during rebasing in <a href="#_rerere">Rerere</a>.</p>
@@ -22855,7 +22938,7 @@ These are standard Javadoc, so your favorite JVM IDE will be able to install the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-10-25 09:13:39 CST
+Last updated 2014-10-31 23:12:16 CST
 </div>
 </div>
 </body>
