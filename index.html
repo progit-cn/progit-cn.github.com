@@ -865,69 +865,69 @@ SHA-1 哈希看起来是这样：</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_git_generally_only_adds_data">Git Generally Only Adds Data</h4>
+<h4 id="_git_一般只添加数据">Git 一般只添加数据</h4>
 <div class="paragraph">
-<p>When you do actions in Git, nearly all of them only add data to the Git database.
-It is hard to get the system to do anything that is not undoable or to make it erase data in any way.
-As in any VCS, you can lose or mess up changes you haven&#8217;t committed yet; but after you commit a snapshot into Git, it is very difficult to lose, especially if you regularly push your database to another repository.</p>
+<p>您执行的 Git 操作，几乎只往 Git 数据库中增加数据。
+很难让 Git 执行任何不可逆操作，或者让它以任何方式清除数据。
+同别的 VCS 一样，未提交更新时有可能丢失或弄乱修改的内容；但是一旦您提交快照到 Git 中，就再难丢失数据，特别是如果您定期的推送数据库到其它仓库到话。</p>
 </div>
 <div class="paragraph">
-<p>This makes using Git a joy because we know we can experiment without the danger of severely screwing things up.
-For a more in-depth look at how Git stores its data and how you can recover data that seems lost, see <a href="#_undoing">Undoing Things</a>.</p>
+<p>使用 Git 是一个安心愉悦的过程，因为我们深知可以尽情做各种尝试，而没有把事情弄糟的危险。
+更深度探讨 Git 如何保存数据及恢复丢失数据的话题，请参考<a href="#_undoing">Undoing Things</a>。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_the_three_states">The Three States</h4>
+<h4 id="_三种状态">三种状态</h4>
 <div class="paragraph">
-<p>Now, pay attention.
-This is the main thing to remember about Git if you want the rest of your learning process to go smoothly.
-Git has three main states that your files can reside in: committed, modified, and staged.
-Committed means that the data is safely stored in your local database.
-Modified means that you have changed the file but have not committed it to your database yet.
-Staged means that you have marked a modified file in its current version to go into your next commit snapshot.</p>
+<p>好，请注意。
+如果您希望后面的学习更顺利，记住下面这些关于 Git 的概念。
+Git 有三种状态，您的文件可能处于三种之一：已提交（committed）、已修改（modified）和已暂存（staged）。
+已提交表示数据已经安全的保存在本地数据库中。
+已修改表示修改了文件，但还没保存到数据库中。
+已暂存表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中。</p>
 </div>
 <div class="paragraph">
-<p>This leads us to the three main sections of a Git project: the Git directory, the working directory, and the staging area.</p>
+<p>由此引入 Git 项目的三个工作区域的概念：Git 仓库、工作目录以及暂存区域。</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/areas.png" alt="Working directory" width="staging area" height="and Git directory.">
 </div>
-<div class="title">Figure 6. Working directory, staging area, and Git directory.</div>
+<div class="title">Figure 6. 工作目录、暂存区域以及 Git 仓库.</div>
 </div>
 <div class="paragraph">
-<p>The Git directory is where Git stores the metadata and object database for your project.
-This is the most important part of Git, and it is what is copied when you clone a repository from another computer.</p>
+<p>Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。
+这是 Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
 </div>
 <div class="paragraph">
-<p>The working directory is a single checkout of one version of the project.
-These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.</p>
+<p>工作目录是对项目的某个版本独立提取出来的内容。
+这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供您使用或修改。</p>
 </div>
 <div class="paragraph">
-<p>The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit.
-It&#8217;s sometimes referred to as the &#8220;index&#8221;, but it&#8217;s also common to refer to it as the staging area.</p>
+<p>暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。
+有时候也被称作`&#8216;索引&#8217;'，不过一般说法还是叫暂存区域。</p>
 </div>
 <div class="paragraph">
-<p>The basic Git workflow goes something like this:</p>
+<p>基本的 Git 工作流程如下：</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>You modify files in your working directory.</p>
+<p>在工作目录中修改文件。</p>
 </li>
 <li>
-<p>You stage the files, adding snapshots of them to your staging area.</p>
+<p>暂存文件，将文件的快照放入暂存区域。</p>
 </li>
 <li>
-<p>You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.</p>
+<p>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>If a particular version of a file is in the Git directory, it&#8217;s considered committed.
-If it&#8217;s modified but has been added to the staging area, it is staged.
-And if it was changed since it was checked out but has not been staged, it is modified.
-In <a href="#_git_basics_chapter">Git 基础</a>, you&#8217;ll learn more about these states and how you can either take advantage of them or skip the staged part entirely.</p>
+<p>如果 Git 目录中保存着的特定版本文件，就属于已提交状态。
+如果作了修改并已放入暂存区域，就属于已暂存状态。
+如果自上次取出后，作了修改但还没有放到暂存区域，就是已修改状态。
+在<a href="#_git_basics_chapter">Git 基础</a>一章，您会进一步了解这些状态的细节，并学会如何根据文件状态实施后续操作，以及怎样跳过暂存直接提交。</p>
 </div>
 </div>
 </div>
